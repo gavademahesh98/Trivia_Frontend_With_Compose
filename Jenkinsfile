@@ -22,7 +22,7 @@ pipeline{
             steps{
 
                 sh """ 
-                docker build -t ${DOCKERIMG}
+                docker build -t ${DOCKERIMG} .
                 docker login -u maheshg98 -p Mahesh@8798
                 docker push ${DOCKERIMG}
                 """
