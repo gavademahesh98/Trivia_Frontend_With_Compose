@@ -1,0 +1,15 @@
+services:
+  frontend:
+    image: ${DOCKERIMG}
+    ports:
+      - ${PORTMAP}
+    restart: ${RESTARTPOLICY}
+    networks:
+      - ${NETWORK}
+
+
+
+
+networks:
+  ${NETWORK}:
+    name: ${NETWORK}
