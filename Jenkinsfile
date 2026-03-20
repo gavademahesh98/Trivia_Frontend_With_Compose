@@ -4,6 +4,8 @@ pipeline{
 
     environment{
         DOCKERIMG= "maheshg98/frontend:${BUILD_NUMBER}"
+        PROJECT= "trivia_frontend"
+        DEPLY_DIR= "/opt/secretes/"
     }
 
     stages{
@@ -32,8 +34,9 @@ pipeline{
         stage('deployment-via-compose'){
             steps{
             sh  """
-                docker compose --env-file /opt/secretes/.env down || true
-                docker compose --env-file /opt/secretes/.env up -d
+                cd  ${DEPLY_DIR}
+                docker compose -p ${PROJECT} --env-file /opt/secretes/.env down || true
+                docker compose -p ${PROJECT} --env-file /opt/secretes/.env up -d
                 
             """
             }
