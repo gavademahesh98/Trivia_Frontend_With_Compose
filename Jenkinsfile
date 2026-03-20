@@ -5,7 +5,7 @@ pipeline{
     environment{
         DOCKERIMG= "maheshg98/frontend:${BUILD_NUMBER}"
         PROJECT= "trivia_frontend"
-        DEPLY_DIR= "/opt/secretes/"
+        
     }
 
     stages{
