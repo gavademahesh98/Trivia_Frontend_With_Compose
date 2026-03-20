@@ -34,7 +34,8 @@ pipeline{
         stage('deployment-via-compose'){
             steps{
             sh  """
-                cd  ${DEPLY_DIR}
+                pwd
+                ls -ltr
                 docker compose -p ${PROJECT} --env-file /opt/secretes/.env down || true
                 docker compose -p ${PROJECT} --env-file /opt/secretes/.env up -d
                 
