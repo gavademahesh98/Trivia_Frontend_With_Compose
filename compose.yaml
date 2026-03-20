@@ -11,5 +11,5 @@ services:
 
 
 networks:
-  ${NETWORK}:
+  Frontnet:
     name: ${NETWORK}
