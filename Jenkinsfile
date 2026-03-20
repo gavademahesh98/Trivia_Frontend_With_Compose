@@ -30,11 +30,13 @@ pipeline{
 
         }
         stage('deployment-via-compose'){
+            steps{
             sh  """
                 docker compose --env-file /opt/secretes/.env down || true
                 docker compose --env-file /opt/secretes/.env up -d
                 
             """
+            }
         }
     }
 }
