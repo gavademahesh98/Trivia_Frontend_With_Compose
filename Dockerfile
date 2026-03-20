@@ -7,5 +7,5 @@ RUN npm install && npm run build
 
 FROM nginx:alpine AS Runtime
 WORKDIR /usr/share/nginx/html
-COPY /app/dist .
+COPY  --from=Builder /app/dist .
 EXPOSE 80
