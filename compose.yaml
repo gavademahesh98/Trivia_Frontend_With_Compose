@@ -11,5 +11,5 @@ services:
 
 
 networks:
-  Frontnet:
+  frontend-nw:
     name: ${FRONTNETWORK}
