@@ -30,14 +30,12 @@ pipeline{
             }
 
         }
-        stage('deployment-via-compose'){
-            steps{
-            sh  """
-                docker compose -p ${PROJECT} --env-file /opt/secretes/.env down || true
-                docker compose -p ${PROJECT} --env-file /opt/secretes/.env up -d
-                
-            """
-            }
-        }
+       stage('deployment-via-compose'){
+    steps{
+        sh '''
+            docker compose -p ${PROJECT} --env-file /opt/secretes/.env up -d --no-deps --build frontend
+        '''
+    }
+}
     }
 }
