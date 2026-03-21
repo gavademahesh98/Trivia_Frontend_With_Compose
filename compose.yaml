@@ -5,11 +5,11 @@ services:
       - ${PORTMAP}
     restart: ${RESTARTPOLICY}
     networks:
-      - ${NETWORK}
+      - ${FRONTNETWORK}
 
 
 
 
 networks:
   Frontnet:
-    name: ${NETWORK}
+    name: ${FRONTNETWORK}
