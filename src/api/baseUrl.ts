@@ -1,6 +1,6 @@
 const baseUrl = (import.meta.env.DEV 
   ? 'http://localhost:3000/api' 
-  : 'http://backend:4545/api'
+  : 'http://backend:3000/api'
 );
 
 export default baseUrl;
